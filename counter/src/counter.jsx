@@ -1,18 +1,22 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 
 
-function Counter(){
+function Counter() {
     const [number, setNumber] = useState(0);
 
     const increment = () => {
-        setNumber(number+1)
+
+
+        setNumber(number + 1)
     }
 
     const decrement = () => {
-        setNumber(number-1)
+        // we will update the setNumber using updater function
+        //when we have multiple stat update its good to use updater on
+        setNumber(prevNumber => prevNumber - 1)
     }
 
-    const reset=()=>{
+    const reset = () => {
         setNumber(0)
     }
 
